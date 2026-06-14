@@ -1,4 +1,9 @@
 from fastapi import FastAPI
+from app.core.database import engine, Base
+from app.models import target
+
+# Create tables
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Astrovoya",
